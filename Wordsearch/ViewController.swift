@@ -19,9 +19,17 @@ class ViewController: UIViewController {
 		
 		let wordSearch = WordSearch()
 		wordSearch.words = words
-		wordSearch.makeGrid()
+		
+		let outPut = wordSearch.render()
+		let url = getDocumentsDirectory().appendingPathComponent("output.pdf")
+		print(url)
+		try? outPut.write(to: url)
 	}
 
+	func getDocumentsDirectory() -> URL {
+		let paths - FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+		return paths[0]
+	}
 
 }
 

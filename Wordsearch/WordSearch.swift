@@ -185,5 +185,61 @@ class WordSearch {
 		return words.shuffled().filter(place)
 	}
 	
-	
+	func render() -> Data {
+		let pageRect = CGRect(x: 0, y: 0, width: 612, height: 792)
+		let margin = pageRect.width / 10
+		
+		let availableSpace = pageRect.width - (margin * 2)
+		let gridCellSize = availableSpace / CGFloat(gridSize)
+		
+		let gridLetterFont = UIFont.systemFont(ofSize: 16)
+		let gridLetterStyle = NSMutableParagraphStyle()
+		gridLetterStyle.alignment = .center
+		
+		let gridLetterAttributes: [NSAttributedString.Key: Any] = [
+			.font: gridLetterFont,
+			.paragraphStyle: gridLetterStyle
+		]
+		
+		let renderer = UIGraphicsPDFRenderer(bounds: pageRect)
+		
+		return renderer.pdfData { ctx in
+			for _ in 0 ..< numberOfPages {
+				ctx.beginPage()
+				
+				_ = makeGrid()
+				
+				// WRITE GRID
+				for i in 0 ... gridSize {
+					let linePosition = CGFloat(i) * gridCellSize
+					
+					ctx.cgContext.move(to: CGPoint(x: margin, y: margin + linePosition))
+					ctx.cgContext.addLine(to: CGPoint(x: margin + (CGFloat(gridSize) * gridCellSize), y: margin + linePosition))
+					
+					ctx.cgContext.move(to: CGPoint(x: margin + linePosition, y: margin))
+					ctx.cgContext.addLine(to: CGPoint(x: margin + linePosition, y: margin + (CGFloat(gridSize) * gridCellSize)))
+				}
+				
+				ctx.cgContext.setLineCap(.square)
+				ctx.cgContext.strokePath()
+				
+				// DRAW LETTERS
+				var xOffset = margin
+				var yOffset = margin
+				
+				for column in labels {
+					for label in column {
+						let size = String(label.letter).size(withAttributes: gridLetterAttributes)
+						let yPosition = (gridCellSize - size.height) / 2
+						let cellRect = CGRect(x: xOffset, y: yOffset + yPosition, width: gridCellSize, height: gridCellSize)
+						String(label.letter).draw(in: cellRect, withAttributes: gridLetterAttributes)
+						xOffset += gridCellSize
+					}
+					
+					xOffset = margin
+					yOffset += gridCellSize
+				}
+			}
+		}
+	}
 }
