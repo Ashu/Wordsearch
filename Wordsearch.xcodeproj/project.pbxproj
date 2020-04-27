@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5414AD4F245670EB00FB2115 /* capitals.json in Resources */ = {isa = PBXBuildFile; fileRef = 5414AD4E245670EB00FB2115 /* capitals.json */; };
 		54D8DCC624544A17007BBFA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D8DCC524544A17007BBFA5 /* AppDelegate.swift */; };
 		54D8DCC824544A17007BBFA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D8DCC724544A17007BBFA5 /* SceneDelegate.swift */; };
 		54D8DCCA24544A17007BBFA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D8DCC924544A17007BBFA5 /* ViewController.swift */; };
@@ -14,6 +15,7 @@
 		54D8DCCF24544A49007BBFA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D8DCCE24544A49007BBFA5 /* Assets.xcassets */; };
 		54D8DCD224544A49007BBFA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D8DCD024544A49007BBFA5 /* LaunchScreen.storyboard */; };
 		54D8DCDD24544A4A007BBFA5 /* WordsearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D8DCDC24544A4A007BBFA5 /* WordsearchTests.swift */; };
+		54D8DCE824544BBD007BBFA5 /* WordSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D8DCE724544BBD007BBFA5 /* WordSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5414AD4E245670EB00FB2115 /* capitals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = capitals.json; sourceTree = "<group>"; };
 		54D8DCC224544A17007BBFA5 /* Wordsearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordsearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D8DCC524544A17007BBFA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54D8DCC724544A17007BBFA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		54D8DCD824544A4A007BBFA5 /* WordsearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordsearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D8DCDC24544A4A007BBFA5 /* WordsearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsearchTests.swift; sourceTree = "<group>"; };
 		54D8DCDE24544A4A007BBFA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54D8DCE724544BBD007BBFA5 /* WordSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				54D8DCC524544A17007BBFA5 /* AppDelegate.swift */,
 				54D8DCC724544A17007BBFA5 /* SceneDelegate.swift */,
 				54D8DCC924544A17007BBFA5 /* ViewController.swift */,
+				54D8DCE724544BBD007BBFA5 /* WordSearch.swift */,
+				5414AD4E245670EB00FB2115 /* capitals.json */,
 				54D8DCCB24544A17007BBFA5 /* Main.storyboard */,
 				54D8DCCE24544A49007BBFA5 /* Assets.xcassets */,
 				54D8DCD024544A49007BBFA5 /* LaunchScreen.storyboard */,
@@ -182,6 +188,7 @@
 			files = (
 				54D8DCD224544A49007BBFA5 /* LaunchScreen.storyboard in Resources */,
 				54D8DCCF24544A49007BBFA5 /* Assets.xcassets in Resources */,
+				5414AD4F245670EB00FB2115 /* capitals.json in Resources */,
 				54D8DCCD24544A17007BBFA5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54D8DCCA24544A17007BBFA5 /* ViewController.swift in Sources */,
+				54D8DCE824544BBD007BBFA5 /* WordSearch.swift in Sources */,
 				54D8DCC624544A17007BBFA5 /* AppDelegate.swift in Sources */,
 				54D8DCC824544A17007BBFA5 /* SceneDelegate.swift in Sources */,
 			);
@@ -369,7 +377,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ashutosh.Wordsearch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ashutosh.demo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -387,7 +395,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ashutosh.Wordsearch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ashutosh.demo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

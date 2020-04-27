@@ -12,7 +12,14 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+		
+		let path = Bundle.main.url(forResource: "capitals", withExtension: "json")!
+		let contents = try! Data(contentsOf: path)
+		let words = try! JSONDecoder().decode([Word].self, from: contents)
+		
+		let wordSearch = WordSearch()
+		wordSearch.words = words
+		wordSearch.makeGrid()
 	}
 
 
